@@ -1,0 +1,24 @@
+<div class="consultar">
+    <app-menu></app-menu>
+    <div class="consultar-contenido">
+      <h1> Consultar saldo</h1>
+      <form class="form" [formGroup]="form" (ngSubmit)="consultar()">
+  
+        <div class="form-campos">
+    
+          <mat-form-field class="campo">
+            <mat-label>Cuenta a consultar</mat-label>
+            <mat-select autocomplete="off" formControlName="cOrigen" >
+              <mat-option *ngFor="let cuenta of cuentas" [value]="cuenta.numCuenta">
+                {{cuenta.numCuenta}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+        </div>
+  
+        <button type="submit" class="ancho" mat-raised-button mat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+      </form>
+      
+    </div>
+  </div>

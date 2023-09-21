@@ -1,0 +1,20 @@
+@import '../../../assets/shared/colores';
+
+.menu{
+    background-color: $base-color;
+    height: 100vh;
+    color: $blanco;
+    img{
+        width: 50%;
+    }
+    mat-list-item{
+        .link{
+            color: $blanco;
+            text-decoration: none;
+        }
+        &:hover{
+            background-color: $color-secund;
+        }
+    }
+    
+}

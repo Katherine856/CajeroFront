@@ -1,0 +1,29 @@
+<div class="nuevo">
+    <app-menu></app-menu>
+    <div class="nuevo-contenido">
+      <h1> Nuevo producto </h1>
+      <form class="form" [formGroup]="form" (ngSubmit)="nuevo()">
+  
+        <div class="form-campos">
+    
+          <mat-form-field class="campo">
+            <mat-label>Tipo de cuenta</mat-label>
+            <mat-select autocomplete="off" formControlName="tipoCuenta">
+              <mat-option value="1">Cuenta de ahorros</mat-option>
+              <mat-option value="2">Cuenta corriente</mat-option>
+              <mat-option value="3">Certificado de depósito a término fijo</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="campo">
+            <mat-label>Clave</mat-label>
+            <input matInput autocomplete="off" formControlName="clave" type="password" inputmode="numeric" pattern="\d*">
+          </mat-form-field>
+          
+        </div>
+  
+        <button type="submit" class="ancho" mat-raised-button mat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+      </form>
+      
+    </div>
+  </div>

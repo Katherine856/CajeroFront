@@ -1,0 +1,15 @@
+<div class="panel">
+  <h1 mat-dialog-title>Ingrese la clave para continuar {{data.mensaje}}</h1>
+  <form mat-dialog-content class="form" [formGroup]="form" (ngSubmit)="confirmar()">
+
+    <div class="form-campos">
+
+      <mat-form-field class="campo">
+        <mat-label>Clave</mat-label>
+        <input matInput autocomplete="off" formControlName="clave" type="password">
+      </mat-form-field>
+    </div>
+
+    <button [mat-dialog-close]="data.mensaje" type="submit" class="ancho" mat-raised-button mat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+  </form>
+</div>

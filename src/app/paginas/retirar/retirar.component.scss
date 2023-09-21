@@ -1,0 +1,11 @@
+@use '../../../assets/shared/funciones';
+
+.retirar{
+    @include funciones.body-pag;
+    &-contenido{
+        @include funciones.body-cont;
+        .form-campos{
+            @include funciones.form(100%);
+        }
+    }
+}

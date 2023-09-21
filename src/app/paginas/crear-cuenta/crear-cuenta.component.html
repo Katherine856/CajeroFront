@@ -1,0 +1,71 @@
+
+    <div class="crear-cuenta-contenido">
+      <h1> Crear cuenta </h1>
+      <form class="form" [formGroup]="form" (ngSubmit)="crearCuenta()">
+  
+        <div class="form-campos">
+          <mat-form-field class="campo">
+            <mat-label>Tipo Documento</mat-label>
+            <mat-select autocomplete="off" formControlName="t_doc">
+              <mat-option value="Cedula de ciudadania">Cedula de ciudadania</mat-option>
+              <mat-option value="Cédula de extranjeria">Cédula de extranjeria</mat-option>
+              <mat-option value="Número de identifiacion tributaria">Número de identifiacion tributaria</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field class="campo">
+            <mat-label>Número de documento</mat-label>
+            <input matInput autocomplete="off" formControlName="numDoc" type="text" inputmode="numeric" pattern="\d*">
+          </mat-form-field>
+    
+          <mat-form-field class="campo">
+            <mat-label>Nombres</mat-label>
+            <input matInput autocomplete="off" formControlName="nombres">
+          </mat-form-field>
+    
+          <mat-form-field class="campo">
+            <mat-label>Apellidos</mat-label>
+            <input matInput autocomplete="off" formControlName="apellidos">
+          </mat-form-field>
+    
+          <mat-form-field class="campo">
+            <mat-label>Correo</mat-label>
+            <input matInput autocomplete="off" formControlName="correo">
+          </mat-form-field>
+    
+          <mat-form-field class="campo">
+            <mat-label>Celular</mat-label>
+            <input matInput autocomplete="off" formControlName="celular" type="text" inputmode="numeric" pattern="\d*">
+          </mat-form-field>
+    
+          <mat-form-field class="campo">
+            <mat-label>Dirección</mat-label>
+            <input matInput autocomplete="off" formControlName="direccion">
+          </mat-form-field>
+
+          <mat-form-field class="campo">
+            <mat-label>Tipo de cuenta</mat-label>
+            <mat-select autocomplete="off" formControlName="tipoCuenta">
+              <mat-option value="1">Cuenta de ahorros</mat-option>
+              <mat-option value="2">Cuenta corriente</mat-option>
+              <mat-option value="3">Certificado de depósito a término fijo</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="campo">
+            <mat-label>Clave</mat-label>
+            <input matInput autocomplete="off" formControlName="clave" type="password" inputmode="numeric" pattern="\d*">
+          </mat-form-field>
+
+          <mat-form-field class="campo">
+            <mat-label>Contraseña portal online</mat-label>
+            <input matInput autocomplete="off" formControlName="contrasena" type="password">
+          </mat-form-field>
+
+        </div>
+  
+        <button type="submit" class="ancho" mat-raised-button mat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+      </form>
+      
+    </div>
+

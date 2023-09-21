@@ -1,0 +1,39 @@
+<div class="consignar">
+  <app-menu></app-menu>
+  <div class="consignar-contenido">
+    <h1> Consignar </h1>
+    <form class="form" [formGroup]="form" (ngSubmit)="consignar()">
+
+      <div class="form-campos">
+  
+        <mat-form-field class="campo">
+          <mat-label>Número de cuenta</mat-label>
+          <input matInput autocomplete="off" formControlName="cuenta" type="text" inputmode="numeric" pattern="\d*">
+        </mat-form-field>
+
+        <mat-form-field class="campo">
+          <mat-label>Número de documento</mat-label>
+          <input matInput autocomplete="off" formControlName="doc" type="text" inputmode="numeric" pattern="\d*">
+        </mat-form-field>
+
+        <mat-form-field class="campo">
+          <mat-label>Cuenta de origen</mat-label>
+          <mat-select autocomplete="off" formControlName="cOrigen" >
+            <mat-option *ngFor="let cuenta of cuentas" [value]="cuenta.numCuenta">
+              {{cuenta.numCuenta}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field class="campo">
+          <mat-label>Monto</mat-label>
+          <input matInput autocomplete="off" formControlName="monto" type="text" inputmode="numeric" pattern="\d*">
+        </mat-form-field>
+  
+      </div>
+
+      <button type="submit" class="ancho" mat-raised-button mat-button color="primary" [disabled]="form.invalid">Consignar</button>
+    </form>
+    
+  </div>
+</div>
