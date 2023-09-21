@@ -61,9 +61,13 @@ export class RetirarComponent {
 
     console.log(transaccion)
     this.servidor.retirar(transaccion).subscribe(data =>{
-      this.openDialog('Consignación realizada con exito')
+      this.openDialog('Transacción realizada con exito')
     }, error => {
-      this.openDialog('Saldo insuficiente')  
+      if(error.status !== 200){
+        this.openDialog('Saldo insuficiente')
+      }else{
+        this.openDialog('Transacción realizada con exito')
+      }
     })
   }
 

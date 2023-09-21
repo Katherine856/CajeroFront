@@ -45,5 +45,9 @@ export class Servidor {
     retirar(transaccion: Transaccion): Observable<Transaccion>{
       return this.httpClient.post<Transaccion>(this.url + 'transaccion/retirar', transaccion);
     }
+
+    calIntereses(){
+      return this.httpClient.get(this.url + 'transaccion/intereses');
+    }
 }
 

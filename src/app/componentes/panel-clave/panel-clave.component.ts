@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,7 +27,7 @@ export class PanelClaveComponent {
   confirmar(){
     const cont = this.form.value.clave;
     if (cont == '12345') {
-      console.log(cont)
+
     }else{
       this.openDialog();
     }

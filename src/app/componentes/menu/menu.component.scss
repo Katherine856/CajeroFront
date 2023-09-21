@@ -1,20 +1,37 @@
 @import '../../../assets/shared/colores';
 
-.menu{
+.menu {
     background-color: $base-color;
     height: 100vh;
     color: $blanco;
-    img{
+
+    img {
         width: 50%;
     }
-    mat-list-item{
-        .link{
+
+    mat-list-item {
+        .link {
             color: $blanco;
             text-decoration: none;
         }
-        &:hover{
+
+        &:hover {
             background-color: $color-secund;
         }
+
+        button {
+            background: none;
+            border: 0;
+            color: $blanco;
+            /* cursor: default; */
+            font-family: Roboto, sans-serif;
+            font-size: 17px;
+            line-height: normal;
+            overflow: visible;
+            padding: 0;
+            letter-spacing: 0.02em;
+
+        }
     }
-    
+
 }

@@ -63,17 +63,29 @@ export class ConsignarComponent implements OnInit {
 
     console.log(transaccion)
     this.servidor.consignar(transaccion).subscribe(data =>{
-      this.openDialog('Consignación realizada con exito')
+      this.openDialogError('Consignación realizada con exito')
     }, error => {
-      this.openDialog('Saldo insuficiente')
+      if(error.status !== 200){
+        this.openDialogError('Saldo insuficiente')
+      }else{
+        this.openDialogError('Consignación realizada con exito')
+      }
     }
     )
   }
 
-  openDialog(mensaje: string) {
+  openDialogError(mensaje: String) {
     this.dialog.open(PanelErrorComponent, {
       data: {
         mensaje: mensaje,
+      },
+    });
+  }
+
+  openDialogClave() {
+    this.dialog.open(PanelErrorComponent, {
+      data: {
+        mensaje: 'la consignacion:',
       },
     });
   }
