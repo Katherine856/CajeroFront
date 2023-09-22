@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, public dialog: MatDialog, private servidor: Servidor) {
     this.form = fb.group({
-      usuario: ['', Validators.required],
-      clave: ['', Validators.required]
+      usuario: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]],
+      clave: ['', Validators.required, Validators.maxLength(16)]
     });
   }
 
@@ -39,7 +39,9 @@ export class LoginComponent implements OnInit {
       }else{
         this.openDialog()
       }
-    })
+    }, error =>{
+      this.openDialog()
+    });
   }
   openDialog() {
     this.dialog.open(PanelErrorComponent, {

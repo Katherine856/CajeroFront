@@ -22,12 +22,13 @@ export class ConsignarComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, public dialog: MatDialog, private servidor: Servidor) {
     this.form = fb.group({
-      cuenta: ['', Validators.required],
-      doc: ['', Validators.required],
-      monto: ['', Validators.required],
+      cuenta: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(8)]],
+      doc: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]],
+      monto: ['', [Validators.required, Validators.min(0)]],
       cOrigen: ['', [Validators.required]],
     });
   }
+   
   ngOnInit(): void {
     this.getCuentas()
   }
@@ -68,7 +69,7 @@ export class ConsignarComponent implements OnInit {
       if(error.status !== 200){
         this.openDialogError('Saldo insuficiente')
       }else{
-        this.openDialogError('Consignación realizada con exito')
+        this.openDialogError('Consignación realizada con exito ')
       }
     }
     )
